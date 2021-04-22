@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WIFIportal</title>
+          </head>
+    <style>
+        h1 {color:black;
+        text-align:center}
+        body {background-color: rgba(255, 255, 0, 0.349)}
+        
+</style>
+    
+    <h1>WIFI CONNECTION PORTAL</h1>
+   
+        <script>
+    function myfunction()
+    {
+        var x=document.getElementById("connectiontype").value;
+        if(x=="Prepaid")
+        {
+        var monthly_rental=75;
+    }
+    else{
+        var monthly_rental=100;
+    }
+        
+    if(scheme=document.getElementById("scheme1"))
+    {
+        var cost_per_month=200;
+    }
+    else
+    if(scheme=document.getElementById("scheme2"))
+    {
+        var cost_per_month=250;
+    }
+
+    var duration= document.getElementById("duration").value;
+var total_monthly_rental=((duration*cost_per_month)+monthly_rental);
+document.getElementById("result").innerHTML="Your Total Monthly Rental is Rs."+ total_monthly_rental+'/-';
+}         
+    </script>
+    
+  
+  
+         <body>
+<form>
+  <center>    
+<table style="width:25%">
+    <tr>
+    <td>Customer Name</td>
+    <td><input type="text"Name="custname" placeholder="Enter customer name"</td></tr>
+    <tr>
+    <td>Customer Email</td>
+<td><input type ="text"name="custmail"placeholder = "abc@gmail.com" ></td></tr>
+<tr>
+    <td>Mobile Number</td>
+<td><input type="text" placeholder="+91 XXXXXXXXXX" name="mobile" pattern="[7-9]{1}[0-9]{9}" ></td>
+</tr>
+<tr><td>Type of Connection</td>
+<td><select name="conntype" id="connectiontype">
+    <option value="Prepaid">Prepaid</option>
+    <option value="Postpaid">Postpaid</option>
+
+</select></td>
+<tr><td>Scheme Name</td>
+<td><input type="radio"name="scheme" id="scheme1" value="Local">Local
+    <input type="radio"name="scheme" id="scheme2" value="STD">STD
+    </td></tr>
+<TR>
+<td>Connection Duration</td>
+<td><input type="number" id="duration" required name="duration" min="1" max="12"></td></tr>
+<tr>
+<td><button type="submit" onclick="myfunction()" name="submit">Calculate Bill Amount</button></td>
+<td><button name="Clear">Reset</button></td></tr>
+
+</table> 
+</center>
+<h2 id="result"></h2>
+</form>
+
+
+    </body>
+    </html>
